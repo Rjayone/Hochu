@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  Hochu
+//
+//  Created by Andew Medvedev on 14.09.15.
+//  Copyright (c) 2015 Andew Medvedev. All rights reserved.
+//
+
+#ifndef Hochu_PrefixHeader_pch
+#define Hochu_PrefixHeader_pch
+
+#import "BaseEntity.h"
+#import <Hochu/Common.h>
+
+#define STORYBOARD [UIStoryboard storyboardWithName:@"Main" bundle:nil]
+
+#endif

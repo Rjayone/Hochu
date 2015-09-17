@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		84FFEE9B1BA73E11003F73BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEE9A1BA73E11003F73BD /* main.m */; };
 		84FFEE9E1BA73E11003F73BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEE9D1BA73E11003F73BD /* AppDelegate.m */; };
-		84FFEEA11BA73E11003F73BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEEA01BA73E11003F73BD /* ViewController.m */; };
 		84FFEEA41BA73E11003F73BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FFEEA21BA73E11003F73BD /* Main.storyboard */; };
 		84FFEEA61BA73E11003F73BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FFEEA51BA73E11003F73BD /* Images.xcassets */; };
 		84FFEEA91BA73E11003F73BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FFEEA71BA73E11003F73BD /* LaunchScreen.xib */; };
 		84FFEEB51BA73E11003F73BD /* HochuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEEB41BA73E11003F73BD /* HochuTests.m */; };
+		84FFEEC61BA73EFD003F73BD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEEC51BA73EFD003F73BD /* MainViewController.m */; };
+		84FFEF3D1BA74384003F73BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FFEF3C1BA74384003F73BD /* UIKit.framework */; };
+		84FFEF401BA74831003F73BD /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEF3F1BA74831003F73BD /* ContactViewController.m */; };
+		84FFEF431BA752AF003F73BD /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEF421BA752AF003F73BD /* ChatViewController.m */; };
+		84FFEF461BA758D5003F73BD /* DialogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEF451BA758D5003F73BD /* DialogItem.m */; };
+		84FFEF491BA758F5003F73BD /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEF481BA758F5003F73BD /* BaseEntity.m */; };
+		84FFEF4D1BA75DEA003F73BD /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEF4C1BA75DEA003F73BD /* Common.m */; };
+		84FFEF511BA7657D003F73BD /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEF501BA7657D003F73BD /* ChatTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +39,28 @@
 		84FFEE9A1BA73E11003F73BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84FFEE9C1BA73E11003F73BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84FFEE9D1BA73E11003F73BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		84FFEE9F1BA73E11003F73BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		84FFEEA01BA73E11003F73BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84FFEEA31BA73E11003F73BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84FFEEA51BA73E11003F73BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84FFEEA81BA73E11003F73BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84FFEEAE1BA73E11003F73BD /* HochuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HochuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FFEEB31BA73E11003F73BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84FFEEB41BA73E11003F73BD /* HochuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HochuTests.m; sourceTree = "<group>"; };
+		84FFEEC41BA73EFD003F73BD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
+		84FFEEC51BA73EFD003F73BD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
+		84FFEF3C1BA74384003F73BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84FFEF3E1BA74831003F73BD /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = Controllers/ContactViewController.h; sourceTree = "<group>"; };
+		84FFEF3F1BA74831003F73BD /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = Controllers/ContactViewController.m; sourceTree = "<group>"; };
+		84FFEF411BA752AF003F73BD /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		84FFEF421BA752AF003F73BD /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		84FFEF441BA758D5003F73BD /* DialogItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogItem.h; sourceTree = "<group>"; };
+		84FFEF451BA758D5003F73BD /* DialogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogItem.m; sourceTree = "<group>"; };
+		84FFEF471BA758F5003F73BD /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseEntity.h; sourceTree = "<group>"; };
+		84FFEF481BA758F5003F73BD /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseEntity.m; sourceTree = "<group>"; };
+		84FFEF4A1BA75961003F73BD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		84FFEF4B1BA75DEA003F73BD /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		84FFEF4C1BA75DEA003F73BD /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		84FFEF4F1BA7657D003F73BD /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
+		84FFEF501BA7657D003F73BD /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FFEF3D1BA74384003F73BD /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +88,7 @@
 				84FFEE971BA73E11003F73BD /* Hochu */,
 				84FFEEB11BA73E11003F73BD /* HochuTests */,
 				84FFEE961BA73E11003F73BD /* Products */,
+				84FFEF3C1BA74384003F73BD /* UIKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,13 +104,10 @@
 		84FFEE971BA73E11003F73BD /* Hochu */ = {
 			isa = PBXGroup;
 			children = (
-				84FFEE9C1BA73E11003F73BD /* AppDelegate.h */,
-				84FFEE9D1BA73E11003F73BD /* AppDelegate.m */,
-				84FFEE9F1BA73E11003F73BD /* ViewController.h */,
-				84FFEEA01BA73E11003F73BD /* ViewController.m */,
+				84FFEEC01BA73E5D003F73BD /* Common */,
+				84FFEEC31BA73E94003F73BD /* Models */,
+				84FFEEC21BA73E86003F73BD /* Controllers */,
 				84FFEEA21BA73E11003F73BD /* Main.storyboard */,
-				84FFEEA51BA73E11003F73BD /* Images.xcassets */,
-				84FFEEA71BA73E11003F73BD /* LaunchScreen.xib */,
 				84FFEE981BA73E11003F73BD /* Supporting Files */,
 			);
 			path = Hochu;
@@ -96,8 +116,11 @@
 		84FFEE981BA73E11003F73BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84FFEE991BA73E11003F73BD /* Info.plist */,
+				84FFEEA71BA73E11003F73BD /* LaunchScreen.xib */,
+				84FFEEA51BA73E11003F73BD /* Images.xcassets */,
 				84FFEE9A1BA73E11003F73BD /* main.m */,
+				84FFEE991BA73E11003F73BD /* Info.plist */,
+				84FFEF4A1BA75961003F73BD /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +140,51 @@
 				84FFEEB31BA73E11003F73BD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84FFEEC01BA73E5D003F73BD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84FFEE9C1BA73E11003F73BD /* AppDelegate.h */,
+				84FFEE9D1BA73E11003F73BD /* AppDelegate.m */,
+				84FFEF4B1BA75DEA003F73BD /* Common.h */,
+				84FFEF4C1BA75DEA003F73BD /* Common.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		84FFEEC21BA73E86003F73BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84FFEF4E1BA76551003F73BD /* Cells */,
+				84FFEEC41BA73EFD003F73BD /* MainViewController.h */,
+				84FFEEC51BA73EFD003F73BD /* MainViewController.m */,
+				84FFEF3E1BA74831003F73BD /* ContactViewController.h */,
+				84FFEF3F1BA74831003F73BD /* ContactViewController.m */,
+				84FFEF411BA752AF003F73BD /* ChatViewController.h */,
+				84FFEF421BA752AF003F73BD /* ChatViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		84FFEEC31BA73E94003F73BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84FFEF441BA758D5003F73BD /* DialogItem.h */,
+				84FFEF451BA758D5003F73BD /* DialogItem.m */,
+				84FFEF471BA758F5003F73BD /* BaseEntity.h */,
+				84FFEF481BA758F5003F73BD /* BaseEntity.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		84FFEF4E1BA76551003F73BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84FFEF4F1BA7657D003F73BD /* ChatTableViewCell.h */,
+				84FFEF501BA7657D003F73BD /* ChatTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +236,7 @@
 				TargetAttributes = {
 					84FFEE941BA73E11003F73BD = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = LQD7TJGE73;
 					};
 					84FFEEAD1BA73E11003F73BD = {
 						CreatedOnToolsVersion = 6.4;
@@ -219,8 +288,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84FFEEA11BA73E11003F73BD /* ViewController.m in Sources */,
+				84FFEF491BA758F5003F73BD /* BaseEntity.m in Sources */,
 				84FFEE9E1BA73E11003F73BD /* AppDelegate.m in Sources */,
+				84FFEF511BA7657D003F73BD /* ChatTableViewCell.m in Sources */,
+				84FFEF401BA74831003F73BD /* ContactViewController.m in Sources */,
+				84FFEF431BA752AF003F73BD /* ChatViewController.m in Sources */,
+				84FFEF4D1BA75DEA003F73BD /* Common.m in Sources */,
+				84FFEEC61BA73EFD003F73BD /* MainViewController.m in Sources */,
+				84FFEF461BA758D5003F73BD /* DialogItem.m in Sources */,
 				84FFEE9B1BA73E11003F73BD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,9 +422,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Hochu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -357,9 +438,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Hochu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
