@@ -13,6 +13,15 @@ typedef enum{
     MessageTypeTo
 } MessageType;
 
+//Данная строка используется для доступа к API
+static NSString* baseURL = @"http://estory.by/hochu.by/client/";
+
+
+//Blocks
+typedef void(^FailureBlock)(NSError *error, NSInteger statusCode);
+typedef void(^SuccessArrayBlock)(NSArray* items);
+typedef void(^SuccessDictionaryBlock)(NSDictionary* params);
+typedef void(^CodeBlock)(NSInteger code);
 
 @interface Common : NSObject
 @end

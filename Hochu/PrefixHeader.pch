@@ -9,8 +9,11 @@
 #ifndef Hochu_PrefixHeader_pch
 #define Hochu_PrefixHeader_pch
 
+#import <UIKit/UIKit.h>
+
+#import "Common.h"
 #import "BaseEntity.h"
-#import <Hochu/Common.h>
+#import "User.h"
 
 #define STORYBOARD [UIStoryboard storyboardWithName:@"Main" bundle:nil]
 
