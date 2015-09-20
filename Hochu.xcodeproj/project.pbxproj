@@ -58,6 +58,7 @@
 		84CF555B1BAD862A00CA8B26 /* ServiceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CF555A1BAD862A00CA8B26 /* ServiceLayer.m */; };
 		84CF555E1BAD879100CA8B26 /* TransportLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CF555D1BAD879100CA8B26 /* TransportLayer.m */; };
 		84CF55631BAD8BF600CA8B26 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CF55621BAD8BF600CA8B26 /* User.m */; };
+		84CF55681BAEAB0600CA8B26 /* CheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CF55661BAEAB0600CA8B26 /* CheckTableViewCell.m */; };
 		84D3BC0E1BAA9D19000A79AB /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3BC0D1BAA9D19000A79AB /* BaseViewController.m */; };
 		84FFEE9B1BA73E11003F73BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEE9A1BA73E11003F73BD /* main.m */; };
 		84FFEE9E1BA73E11003F73BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFEE9D1BA73E11003F73BD /* AppDelegate.m */; };
@@ -184,6 +185,8 @@
 		84CF555F1BAD8A0200CA8B26 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		84CF55611BAD8BF600CA8B26 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
 		84CF55621BAD8BF600CA8B26 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		84CF55651BAEAB0600CA8B26 /* CheckTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckTableViewCell.h; path = Controllers/CheckTableViewCell.h; sourceTree = "<group>"; };
+		84CF55661BAEAB0600CA8B26 /* CheckTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckTableViewCell.m; path = Controllers/CheckTableViewCell.m; sourceTree = "<group>"; };
 		84D3BC0C1BAA9D19000A79AB /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		84D3BC0D1BAA9D19000A79AB /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		84FFEE951BA73E11003F73BD /* Hochu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hochu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -430,6 +433,15 @@
 			name = "Base Entity";
 			sourceTree = "<group>";
 		};
+		84CF55641BADE45C00CA8B26 /* Base VC */ = {
+			isa = PBXGroup;
+			children = (
+				84D3BC0C1BAA9D19000A79AB /* BaseViewController.h */,
+				84D3BC0D1BAA9D19000A79AB /* BaseViewController.m */,
+			);
+			name = "Base VC";
+			sourceTree = "<group>";
+		};
 		84FFEE8C1BA73E11003F73BD = {
 			isa = PBXGroup;
 			children = (
@@ -452,13 +464,13 @@
 		84FFEE971BA73E11003F73BD /* Hochu */ = {
 			isa = PBXGroup;
 			children = (
+				84FFEE981BA73E11003F73BD /* Supporting Files */,
+				84CF54C21BAD7CA900CA8B26 /* Libs */,
 				84CF55581BAD853C00CA8B26 /* Service Layer */,
 				84CF55571BAD853100CA8B26 /* Transport Layer */,
-				84CF54C21BAD7CA900CA8B26 /* Libs */,
 				84FFEEC01BA73E5D003F73BD /* Common */,
 				84FFEEC31BA73E94003F73BD /* Models */,
 				84FFEEC21BA73E86003F73BD /* Controllers */,
-				84FFEE981BA73E11003F73BD /* Supporting Files */,
 				84FFEEA21BA73E11003F73BD /* Main.storyboard */,
 			);
 			path = Hochu;
@@ -507,6 +519,7 @@
 		84FFEEC21BA73E86003F73BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				84CF55641BADE45C00CA8B26 /* Base VC */,
 				84FFEF4E1BA76551003F73BD /* Cells */,
 				84FFEEC41BA73EFD003F73BD /* MainViewController.h */,
 				84FFEEC51BA73EFD003F73BD /* MainViewController.m */,
@@ -514,8 +527,6 @@
 				84FFEF3F1BA74831003F73BD /* ContactViewController.m */,
 				84FFEF411BA752AF003F73BD /* ChatViewController.h */,
 				84FFEF421BA752AF003F73BD /* ChatViewController.m */,
-				84D3BC0C1BAA9D19000A79AB /* BaseViewController.h */,
-				84D3BC0D1BAA9D19000A79AB /* BaseViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -537,6 +548,8 @@
 			children = (
 				84FFEF4F1BA7657D003F73BD /* ChatTableViewCell.h */,
 				84FFEF501BA7657D003F73BD /* ChatTableViewCell.m */,
+				84CF55651BAEAB0600CA8B26 /* CheckTableViewCell.h */,
+				84CF55661BAEAB0600CA8B26 /* CheckTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -670,6 +683,7 @@
 				84FFEF511BA7657D003F73BD /* ChatTableViewCell.m in Sources */,
 				84CF553F1BAD7CA900CA8B26 /* PDKeychainBindingsController.m in Sources */,
 				84CF55441BAD7CA900CA8B26 /* SDWebImageCompat.m in Sources */,
+				84CF55681BAEAB0600CA8B26 /* CheckTableViewCell.m in Sources */,
 				84CF55461BAD7CA900CA8B26 /* SDWebImageDownloader.m in Sources */,
 				84CF55521BAD7CA900CA8B26 /* SHSFlagAccessoryView.m in Sources */,
 				84CF554D1BAD7CA900CA8B26 /* UIImageView+HighlightedWebCache.m in Sources */,

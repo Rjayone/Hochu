@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UIView *background;
 
+- (void)configureCellWithParams:(NSDictionary*)params;
+
 @end

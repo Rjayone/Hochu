@@ -10,7 +10,7 @@
 #import "ContactViewController.h"
 
 @interface MainViewController ()
-@property (strong, nonatomic) UIButton* continueButton;
+@property (weak, nonatomic) IBOutlet UIButton* continueButton;
 @end
 
 
@@ -18,13 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.continueButton.layer.borderColor = [[UIColor whiteColor]CGColor];
-    self.continueButton.layer.borderWidth = 10.f;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    self.continueButton.backgroundColor = [UIColor colorWithWhite:1 alpha:0.01f];
+    self.continueButton.layer.borderColor = [[UIColor whiteColor]CGColor];
+    self.continueButton.layer.borderWidth = 4;
+    self.continueButton.layer.cornerRadius = 10;
 }
 
 

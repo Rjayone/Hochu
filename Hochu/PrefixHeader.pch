@@ -17,4 +17,12 @@
 
 #define STORYBOARD [UIStoryboard storyboardWithName:@"Main" bundle:nil]
 
+
+//NavigationBar
+#define NAV_VC        self.navigationController
+#define NAV_ITEM      self.navigationItem
+
+
+//Colors
+#define RED_COLOR 
 #endif

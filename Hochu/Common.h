@@ -10,8 +10,10 @@
 
 typedef enum{
     MessageTypeFrom,
-    MessageTypeTo
+    MessageTypeTo,
+    MessageTypeCheck
 } MessageType;
+
 
 //Данная строка используется для доступа к API
 static NSString* baseURL = @"http://estory.by/hochu.by/client/";

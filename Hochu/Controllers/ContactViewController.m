@@ -12,7 +12,6 @@
 @interface ContactViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView* scrollView;
 @property (strong, nonatomic) UITextField* activeField;
-
 @property (assign, nonatomic) UIEdgeInsets initialInsets;
 @end
 
@@ -26,6 +25,15 @@
     //Notifications
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShowNotification:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
+    
+    NAV_ITEM.title = @"Контактные данные";
+    NAV_ITEM.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@""
+                                                                 style:UIBarButtonItemStylePlain
+                                                                target:nil
+                                                                action:nil];
+    NAV_VC.navigationBar.tintColor = [UIColor whiteColor];
+    NAV_VC.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                  NSFontAttributeName : [UIFont fontWithName:@"ArialMT" size:16.0] };
 }
 
 //--------------------------------------------------------------------
@@ -44,7 +52,15 @@
 #pragma mark - UITextField Delegate
 //--------------------------------------------------------------------
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    return YES;
+    if(textField.tag == 5) {
+        [self.view endEditing:YES];
+        return YES;
+    }
+    
+    for(UIView* view in ((UIView*)[self.scrollView.subviews firstObject]).subviews)
+        if(view.tag == textField.tag+1)
+            [view becomeFirstResponder];
+    return NO;
 }
 
 

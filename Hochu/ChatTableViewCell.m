@@ -14,10 +14,8 @@
     self.background.layer.cornerRadius = 5.f;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)configureCellWithParams:(NSDictionary*)params {
+    
 }
 
 @end
