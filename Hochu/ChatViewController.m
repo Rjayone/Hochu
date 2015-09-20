@@ -10,12 +10,18 @@
 #import "DialogItem.h"
 #import "ChatTableViewCell.h"
 
-@interface ChatViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface ChatViewController () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
 @property (strong, nonatomic) NSMutableArray* dialogHistory;    //Array of dialog items
-@property (weak, nonatomic) IBOutlet UITextField *messageBox;
+//@property (weak, nonatomic) IBOutlet UITextField *messageBox;
+@property (weak, nonatomic) IBOutlet UITextView *messageBox;
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
-@property (assign, nonatomic) UIEdgeInsets initialInsets;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *inputViewBottomConstraint;
+
+@property (assign, nonatomic) UIEdgeInsets initialInsets;
+@property (assign, nonatomic) NSInteger defaultTextViewHeight;
+@property (assign, nonatomic) NSInteger dialogId;
+
 
 @end
 
@@ -32,6 +38,16 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
     
     NAV_ITEM.title = @"Диалог";
+    
+    self.messageBox.layer.cornerRadius = 5.f;
+    self.messageBox.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+    self.messageBox.layer.borderWidth = 0.5;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.defaultTextViewHeight = CGRectGetHeight( self.messageBox.frame);
+    [self loadMessageHitoryForDialogId:0];
 }
 
 
@@ -60,7 +76,7 @@
 #pragma mark - UITableView Delegate
 //--------------------------------------------------------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 64.f;
+    return 16.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -83,6 +99,20 @@
     return NO;
 }
 
+- (void)textViewDidChange:(UITextView *)textView {
+    self.textViewHeight.constant = textView.contentSize.height;
+    [self.view layoutIfNeeded];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 #pragma mark - IBActions
 - (IBAction)sendMessage:(UIButton *)sender {
     if(self.messageBox.text.length == 0)
@@ -101,6 +131,9 @@
     if(indexPath.row == 0)
         [self.tableView scrollsToTop];
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    self.messageBox.text = @"";
+    self.textViewHeight.constant = self.defaultTextViewHeight;
+    [self.view layoutIfNeeded];
 }
 
 #pragma mark - Notification
@@ -141,4 +174,21 @@
         [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     }
 }
+
+
+#pragma mark - Loaders
+- (void)loadMessageHitoryForDialogId:(NSInteger)dialogId {
+    NSIndexPath* indexPath = [NSIndexPath indexPathForItem:self.dialogHistory.count inSection:0];
+    DialogItem* item = [DialogItem new];
+    NSString* want = [self.segueParams objectForKey:@"want"];
+    User* user = [self.segueParams objectForKey:@"user"];
+    item.message = [NSString stringWithFormat:@"Привет, меня зовут %@. Я хочу заказать %@", user.name, want];
+    item.type    = MessageTypeTo;
+    
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.dialogHistory addObject:item];
+    [self.tableView endUpdates];
+}
+
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class User;
+
 typedef enum{
     MessageTypeFrom,
     MessageTypeTo,
@@ -24,6 +26,8 @@ typedef void(^FailureBlock)(NSError *error, NSInteger statusCode);
 typedef void(^SuccessArrayBlock)(NSArray* items);
 typedef void(^SuccessDictionaryBlock)(NSDictionary* params);
 typedef void(^CodeBlock)(NSInteger code);
+
+static User* user = nil;
 
 @interface Common : NSObject
 @end

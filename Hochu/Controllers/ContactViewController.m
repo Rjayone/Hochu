@@ -8,9 +8,17 @@
 
 #import "ContactViewController.h"
 #import "ServiceLayer.h"
+#import "ChatViewController.h"
 
 @interface ContactViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView* scrollView;
+@property (weak, nonatomic) IBOutlet UITextField *clientNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextFiled;
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *iWantTextField;
+@property (weak, nonatomic) IBOutlet UIButton *continueButton;
+
+
 @property (strong, nonatomic) UITextField* activeField;
 @property (assign, nonatomic) UIEdgeInsets initialInsets;
 @end
@@ -34,6 +42,10 @@
     NAV_VC.navigationBar.tintColor = [UIColor whiteColor];
     NAV_VC.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor],
                                                   NSFontAttributeName : [UIFont fontWithName:@"ArialMT" size:16.0] };
+    
+//    self.continueButton.layer.borderColor = [[UIColor redColor]CGColor];
+//    self.continueButton.layer.borderWidth = 4;
+//    self.continueButton.layer.cornerRadius = 10;
 }
 
 //--------------------------------------------------------------------
@@ -94,16 +106,27 @@
 #pragma mark - Segue
 //--------------------------------------------------------------------
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    User* user = [[User alloc] init];
-    user.phoneNumber = @"+37529141236";
-    user.address = @"Shabanchiki";
+    ChatViewController* chatVC = segue.destinationViewController;
+    user = [[User alloc] init];
+    user.name = self.clientNameTextField.text;
+    user.phoneNumber = self.phoneNumberTextFiled.text;
+    user.address = self.addressTextField.text;
+    
+    NSDictionary* params = @{@"user" : user,
+                             @"want" : self.iWantTextField.text
+                             };
+    
+    chatVC.segueParams = params;
+    
     [[ServiceLayer sharedService]
         openNewDialogForUser:user
-     address:user.address
-     withSuccess:^(NSInteger dialogId) {
+        address:user.address
+        withSuccess:^(NSInteger dialogId) {
          //
-     } failuer:^(NSError *error, NSInteger statusCode) {
+        } failuer:^(NSError *error, NSInteger statusCode) {
          //code
-     }];
+    }];
+    
+    
 }
 @end

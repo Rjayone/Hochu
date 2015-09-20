@@ -10,5 +10,5 @@
 #import "BaseViewController.h"
 
 @interface ChatViewController : BaseViewController
-
+@property (strong, nonatomic) NSDictionary* segueParams;
 @end

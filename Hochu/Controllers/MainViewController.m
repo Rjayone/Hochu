@@ -23,7 +23,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.continueButton.backgroundColor = [UIColor colorWithWhite:1 alpha:0.01f];
     self.continueButton.layer.borderColor = [[UIColor whiteColor]CGColor];
     self.continueButton.layer.borderWidth = 4;
     self.continueButton.layer.cornerRadius = 10;

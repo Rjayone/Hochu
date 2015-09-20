@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>36760AE2-666C-41C4-9957-03DAB6440F30</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Hochu</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A8DDE4E401041E04D6BD9685C04483480082F7EE</key>
 		<string>https://github.com/Rjayone/Hochu.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Hochu.xcodeproj/project.xcworkspace</string>
+	<string>Hochu.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A8DDE4E401041E04D6BD9685C04483480082F7EE</key>
