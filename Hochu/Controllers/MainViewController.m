@@ -10,7 +10,7 @@
 #import "ContactViewController.h"
 
 @interface MainViewController ()
-@property (weak, nonatomic) IBOutlet UIButton* continueButton;
+@property (weak, nonatomic) IBOutlet UIButton* continueButton ;
 @end
 
 

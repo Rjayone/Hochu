@@ -145,8 +145,8 @@
     
     self.initialInsets = self.tableView.contentInset;
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.tableView.contentInset.top, 0.f, kbRect.size.height, 0.f);
-    self.tableView.contentInset = contentInsets;
-    self.tableView.scrollIndicatorInsets = contentInsets;
+//    self.tableView.contentInset = contentInsets;
+//    self.tableView.scrollIndicatorInsets = contentInsets;
     
     CGFloat animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey]floatValue];
     [UIView animateWithDuration:animationDuration animations:^{
@@ -154,15 +154,20 @@
         [self.view layoutIfNeeded];
     }];
     
+    if(self.dialogHistory.count > 0) {
+        NSIndexPath* indexPath = [NSIndexPath indexPathForItem:self.dialogHistory.count-1 inSection:0];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    }
+    
 }
 
 //--------------------------------------------------------------------
 - (void)keyboardWillHideNotification:(NSNotification*) params {
     NSDictionary* info = [params userInfo];
-    self.tableView.contentInset = self.initialInsets;
-    self.tableView.contentOffset = (CGPoint){0, -64};
-    self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero;
-    
+    //self.tableView.contentInset = self.initialInsets;
+//    self.tableView.contentOffset = (CGPoint){0, -64};
+//    self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero;
+//    
     CGFloat animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey]floatValue];
     [UIView animateWithDuration:animationDuration animations:^{
         self.inputViewBottomConstraint.constant = 0;
