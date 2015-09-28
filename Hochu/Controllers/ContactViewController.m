@@ -40,8 +40,8 @@
                                                                 target:nil
                                                                 action:nil];
     NAV_VC.navigationBar.tintColor = [UIColor whiteColor];
-    NAV_VC.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor],
-                                                  NSFontAttributeName : [UIFont fontWithName:@"ArialMT" size:16.0] };
+    NAV_VC.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor] };
+                                                  //NSFontAttributeName : [UIFont fontWithName:@"ArialMT" size:16.0] };
     
 //    self.continueButton.layer.borderColor = [[UIColor redColor]CGColor];
 //    self.continueButton.layer.borderWidth = 4;

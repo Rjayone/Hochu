@@ -258,16 +258,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md0-w4-2uc">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cc-EV-ymZ">
-                                        <rect key="frame" x="546" y="8" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cc-EV-ymZ">
+                                        <rect key="frame" x="552" y="8" width="33" height="33"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="Olf-hh-JVl"/>
-                                            <constraint firstAttribute="height" constant="30" id="fBH-js-qDW"/>
+                                            <constraint firstAttribute="width" constant="33" id="Olf-hh-JVl"/>
+                                            <constraint firstAttribute="height" constant="33" id="fBH-js-qDW"/>
                                         </constraints>
-                                        <state key="normal" title="Send">
+                                        <state key="normal" title="Send" image="Available-send-button">
                                             <color key="titleColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="disabled" image="Unavailable-send-button"/>
                                         <connections>
                                             <action selector="sendMessage:" destination="lue-fH-b7M" eventType="touchUpInside" id="z6w-KJ-zxw"/>
                                         </connections>
@@ -279,7 +280,7 @@
                                             <constraint firstAttribute="height" constant="33" id="1nZ-D2-ORe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="lue-fH-b7M" id="hSN-t3-TwS"/>
@@ -288,11 +289,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.86836965460526316" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="9Cc-EV-ymZ" secondAttribute="bottom" constant="11" id="6xU-E9-5kY"/>
-                                    <constraint firstItem="9Cc-EV-ymZ" firstAttribute="leading" secondItem="ti2-al-EUP" secondAttribute="trailing" constant="8" id="X4z-Hp-4BR"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Cc-EV-ymZ" secondAttribute="bottom" constant="8" id="6xU-E9-5kY"/>
+                                    <constraint firstItem="9Cc-EV-ymZ" firstAttribute="leading" secondItem="ti2-al-EUP" secondAttribute="trailing" constant="14" id="X4z-Hp-4BR"/>
                                     <constraint firstAttribute="bottom" secondItem="ti2-al-EUP" secondAttribute="bottom" constant="8" id="b9e-Hd-kqD"/>
                                     <constraint firstItem="ti2-al-EUP" firstAttribute="leading" secondItem="Md0-w4-2uc" secondAttribute="leading" constant="8" id="eSn-62-c06"/>
-                                    <constraint firstAttribute="trailing" secondItem="9Cc-EV-ymZ" secondAttribute="trailing" constant="8" id="lBa-tU-kot"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Cc-EV-ymZ" secondAttribute="trailing" constant="15" id="lBa-tU-kot"/>
                                     <constraint firstItem="ti2-al-EUP" firstAttribute="top" secondItem="Md0-w4-2uc" secondAttribute="top" constant="8" id="mnb-2R-SG0"/>
                                 </constraints>
                             </view>
@@ -520,6 +521,7 @@
                     <connections>
                         <outlet property="inputViewBottomConstraint" destination="EQm-nF-kac" id="k6b-BL-Bdh"/>
                         <outlet property="messageBox" destination="ti2-al-EUP" id="Amr-RO-YZT"/>
+                        <outlet property="sendButton" destination="9Cc-EV-ymZ" id="iYh-Z5-iLg"/>
                         <outlet property="tableView" destination="1JL-tX-Dru" id="BZw-g5-85Q"/>
                         <outlet property="textViewHeight" destination="1nZ-D2-ORe" id="Jee-kH-MLb"/>
                     </connections>
@@ -548,4 +550,8 @@
             <point key="canvasLocation" x="1149" y="329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Available-send-button" width="90" height="91"/>
+        <image name="Unavailable-send-button" width="90" height="91"/>
+    </resources>
 </document>

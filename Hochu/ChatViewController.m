@@ -12,11 +12,11 @@
 
 @interface ChatViewController () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
 @property (strong, nonatomic) NSMutableArray* dialogHistory;    //Array of dialog items
-//@property (weak, nonatomic) IBOutlet UITextField *messageBox;
 @property (weak, nonatomic) IBOutlet UITextView *messageBox;
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *inputViewBottomConstraint;
+@property (weak, nonatomic) IBOutlet UIButton* sendButton;
 
 @property (assign, nonatomic) UIEdgeInsets initialInsets;
 @property (assign, nonatomic) NSInteger defaultTextViewHeight;
@@ -38,6 +38,12 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
     
     NAV_ITEM.title = @"Диалог";
+    
+    if(self.messageBox.text.length <= 0) {
+        self.sendButton.enabled = NO;
+    } else {
+        self.sendButton.enabled = YES;
+    }
     
     self.messageBox.layer.cornerRadius = 5.f;
     self.messageBox.layer.borderColor = [[UIColor lightGrayColor]CGColor];
@@ -101,11 +107,15 @@
 
 - (void)textViewDidChange:(UITextView *)textView {
     self.textViewHeight.constant = textView.contentSize.height;
+    if(self.messageBox.text.length <= 0) {
+        self.sendButton.enabled = NO;
+    } else {
+        self.sendButton.enabled = YES;
+    }
     [self.view layoutIfNeeded];
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {    
     if([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
         return NO;
@@ -144,9 +154,6 @@
     kbRect = [self.view convertRect:kbRect fromView:nil];
     
     self.initialInsets = self.tableView.contentInset;
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.tableView.contentInset.top, 0.f, kbRect.size.height, 0.f);
-//    self.tableView.contentInset = contentInsets;
-//    self.tableView.scrollIndicatorInsets = contentInsets;
     
     CGFloat animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey]floatValue];
     [UIView animateWithDuration:animationDuration animations:^{
@@ -163,11 +170,7 @@
 
 //--------------------------------------------------------------------
 - (void)keyboardWillHideNotification:(NSNotification*) params {
-    NSDictionary* info = [params userInfo];
-    //self.tableView.contentInset = self.initialInsets;
-//    self.tableView.contentOffset = (CGPoint){0, -64};
-//    self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero;
-//    
+    NSDictionary* info = [params userInfo];  
     CGFloat animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey]floatValue];
     [UIView animateWithDuration:animationDuration animations:^{
         self.inputViewBottomConstraint.constant = 0;
