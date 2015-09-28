@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView   *orderItemsContentView;
 @property (weak, nonatomic) IBOutlet UIButton *noButton;
 @property (weak, nonatomic) IBOutlet UIButton *confirmOrderButton;
-@property (copy, nonatomic) id<CheckTableViewCellDelegate> delegate;
+@property (weak, nonatomic) id<CheckTableViewCellDelegate> delegate;
 
 
 - (void)configureCellWithCheckItem:(CheckItem*)item;

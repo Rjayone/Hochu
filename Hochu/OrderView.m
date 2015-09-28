@@ -53,13 +53,14 @@
     self.summaryLabel.text = [NSString stringWithFormat:@"= %ld", (long)item.price * item.count];
     
     __weak typeof (self) wself = self;
-    __unused SDWebImageDownloader* dowloader = [[SDWebImageDownloader alloc]
-        downloadImageWithURL:item.image
-        options:SDWebImageDownloaderProgressiveDownload
-        progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-        } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-            wself.previewImage.image = image;
-        }];
+//    __unused SDWebImageDownloader* dowloader = [[SDWebImageDownloader alloc]
+//        downloadImageWithURL:item.image
+//        options:SDWebImageDownloaderProgressiveDownload
+//        progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//            
+//        } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+//            wself.previewImage.image = image;
+//        }];
 }
 
 @end
