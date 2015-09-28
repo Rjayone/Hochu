@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		309800AF1BB9442300BE1A04 /* CheckItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 309800AE1BB9442300BE1A04 /* CheckItem.m */; settings = {ASSET_TAGS = (); }; };
+		309800B21BB945C100BE1A04 /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 309800B11BB945C100BE1A04 /* OrderItem.m */; settings = {ASSET_TAGS = (); }; };
+		30FCA11E1BB9302400058864 /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FCA11D1BB9302400058864 /* OrderView.xib */; settings = {ASSET_TAGS = (); }; };
+		30FCA1211BB9328B00058864 /* OrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FCA1201BB9328B00058864 /* OrderView.m */; settings = {ASSET_TAGS = (); }; };
 		84CF55271BAD7CA900CA8B26 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CF54C61BAD7CA900CA8B26 /* AFHTTPRequestOperation.m */; };
 		84CF55281BAD7CA900CA8B26 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CF54C81BAD7CA900CA8B26 /* AFHTTPRequestOperationManager.m */; };
 		84CF55291BAD7CA900CA8B26 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CF54CA1BAD7CA900CA8B26 /* AFHTTPSessionManager.m */; };
@@ -87,6 +91,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		309800AD1BB9442300BE1A04 /* CheckItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckItem.h; path = Models/CheckItem.h; sourceTree = "<group>"; };
+		309800AE1BB9442300BE1A04 /* CheckItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckItem.m; path = Models/CheckItem.m; sourceTree = "<group>"; };
+		309800B01BB945C100BE1A04 /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderItem.h; path = Models/OrderItem.h; sourceTree = "<group>"; };
+		309800B11BB945C100BE1A04 /* OrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderItem.m; path = Models/OrderItem.m; sourceTree = "<group>"; };
+		30FCA11D1BB9302400058864 /* OrderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
+		30FCA11F1BB9328B00058864 /* OrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderView.h; sourceTree = "<group>"; };
+		30FCA1201BB9328B00058864 /* OrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderView.m; sourceTree = "<group>"; };
 		84CF54C51BAD7CA900CA8B26 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		84CF54C61BAD7CA900CA8B26 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		84CF54C71BAD7CA900CA8B26 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -236,6 +247,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30FCA11C1BB92FFE00058864 /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+				30FCA11D1BB9302400058864 /* OrderView.xib */,
+				30FCA11F1BB9328B00058864 /* OrderView.h */,
+				30FCA1201BB9328B00058864 /* OrderView.m */,
+			);
+			name = "Custom Elements";
+			sourceTree = "<group>";
+		};
 		84CF54C21BAD7CA900CA8B26 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +491,7 @@
 				84CF55571BAD853100CA8B26 /* Transport Layer */,
 				84FFEEC01BA73E5D003F73BD /* Common */,
 				84FFEEC31BA73E94003F73BD /* Models */,
+				30FCA11C1BB92FFE00058864 /* Custom Elements */,
 				84FFEEC21BA73E86003F73BD /* Controllers */,
 				84FFEEA21BA73E11003F73BD /* Main.storyboard */,
 			);
@@ -537,6 +559,10 @@
 				84CF55601BAD8BD200CA8B26 /* Base Entity */,
 				84FFEF441BA758D5003F73BD /* DialogItem.h */,
 				84FFEF451BA758D5003F73BD /* DialogItem.m */,
+				309800AD1BB9442300BE1A04 /* CheckItem.h */,
+				309800AE1BB9442300BE1A04 /* CheckItem.m */,
+				309800B01BB945C100BE1A04 /* OrderItem.h */,
+				309800B11BB945C100BE1A04 /* OrderItem.m */,
 				84CF55611BAD8BF600CA8B26 /* User.h */,
 				84CF55621BAD8BF600CA8B26 /* User.m */,
 			);
@@ -643,6 +669,7 @@
 				84FFEEA61BA73E11003F73BD /* Images.xcassets in Resources */,
 				84CF553D1BAD7CA900CA8B26 /* .gitignore in Resources */,
 				84CF553A1BAD7CA900CA8B26 /* LICENSE in Resources */,
+				30FCA11E1BB9302400058864 /* OrderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +696,8 @@
 				84CF552B1BAD7CA900CA8B26 /* AFSecurityPolicy.m in Sources */,
 				84D3BC0E1BAA9D19000A79AB /* BaseViewController.m in Sources */,
 				84CF55631BAD8BF600CA8B26 /* User.m in Sources */,
+				309800B21BB945C100BE1A04 /* OrderItem.m in Sources */,
+				309800AF1BB9442300BE1A04 /* CheckItem.m in Sources */,
 				84CF55511BAD7CA900CA8B26 /* README.md in Sources */,
 				84CF55321BAD7CA900CA8B26 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				84CF55551BAD7CA900CA8B26 /* SHSPhoneNumberFormatter.m in Sources */,
@@ -699,6 +728,7 @@
 				84FFEF4D1BA75DEA003F73BD /* Common.m in Sources */,
 				84CF55381BAD7CA900CA8B26 /* UIRefreshControl+AFNetworking.m in Sources */,
 				84CF552F1BAD7CA900CA8B26 /* AFURLSessionManager.m in Sources */,
+				30FCA1211BB9328B00058864 /* OrderView.m in Sources */,
 				84CF552E1BAD7CA900CA8B26 /* AFURLResponseSerialization.m in Sources */,
 				84CF553E1BAD7CA900CA8B26 /* PDKeychainBindings.m in Sources */,
 				84CF55351BAD7CA900CA8B26 /* UIButton+AFNetworking.m in Sources */,

@@ -13,6 +13,7 @@
 @interface DialogItem : BaseEntity
 
 @property (strong, nonatomic) NSString* message;
+@property (strong, nonatomic) NSDate* date;
 @property (assign, nonatomic) MessageType type;
 
 @end

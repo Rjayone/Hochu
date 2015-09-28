@@ -422,6 +422,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAu-Ze-c5h">
                                                             <rect key="frame" x="16" y="100" width="514" height="87"/>
                                                             <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="87" id="tbu-kG-PVd"/>
+                                                            </constraints>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7W-et-P1k">
                                                             <rect key="frame" x="16" y="195" width="250" height="46"/>
@@ -491,6 +494,7 @@
                                             <outlet property="addressLabel" destination="Det-tN-4E6" id="Llm-cq-mbd"/>
                                             <outlet property="background" destination="No7-tJ-4FA" id="Izn-jh-BFx"/>
                                             <outlet property="confirmOrderButton" destination="s94-yX-GO9" id="PX6-4F-Hnr"/>
+                                            <outlet property="contentViewHeightConstraint" destination="tbu-kG-PVd" id="nIq-Rq-i4T"/>
                                             <outlet property="noButton" destination="c7W-et-P1k" id="Mha-xr-59W"/>
                                             <outlet property="orderDateLabel" destination="0DP-3s-Iag" id="Lf4-tb-hMc"/>
                                             <outlet property="orderItemsContentView" destination="IAu-Ze-c5h" id="NgG-wY-lHU"/>

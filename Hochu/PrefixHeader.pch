@@ -11,9 +11,13 @@
 
 #import <UIKit/UIKit.h>
 
+//Models
 #import "Common.h"
 #import "BaseEntity.h"
 #import "User.h"
+#import "DialogItem.h"
+#import "CheckItem.h"
+#import "OrderItem.h"
 
 #define STORYBOARD [UIStoryboard storyboardWithName:@"Main" bundle:nil]
 

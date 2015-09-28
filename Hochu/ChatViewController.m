@@ -7,10 +7,11 @@
 //
 
 #import "ChatViewController.h"
-#import "DialogItem.h"
 #import "ChatTableViewCell.h"
+#import "CheckTableViewCell.h"
 
-@interface ChatViewController () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
+@interface ChatViewController () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, CheckTableViewCellDelegate>
+
 @property (strong, nonatomic) NSMutableArray* dialogHistory;    //Array of dialog items
 @property (weak, nonatomic) IBOutlet UITextView *messageBox;
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
@@ -22,9 +23,10 @@
 @property (assign, nonatomic) NSInteger defaultTextViewHeight;
 @property (assign, nonatomic) NSInteger dialogId;
 
-
 @end
 
+
+//---------------------------------------------------------------------
 @implementation ChatViewController
 
 - (void)viewDidLoad {
@@ -70,12 +72,29 @@
 
 //--------------------------------------------------------------------
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ChatTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"ChatToCell" forIndexPath:indexPath];
-    if(!cell)
-        cell = [ChatTableViewCell new];
-    DialogItem* item = [self.dialogHistory objectAtIndex:indexPath.row];
-    cell.messageLabel.text = item.message;
-    return cell;
+    id idItem = [self.dialogHistory objectAtIndex:indexPath.row];
+    if([idItem isKindOfClass:[DialogItem class]]) {
+        DialogItem* item = (DialogItem*)idItem;
+        if(item.type == MessageTypeTo) {
+            ChatTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"ChatToCell" forIndexPath:indexPath];
+            if(!cell)
+                cell = [ChatTableViewCell new];
+            DialogItem* item = [self.dialogHistory objectAtIndex:indexPath.row];
+                cell.messageLabel.text = item.message;
+        }
+        
+        if(item.type == MessageTypeFrom) {
+            
+        }
+    }
+    else {
+        CheckItem* item = (CheckItem*)idItem;
+        CheckTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CheckCell" forIndexPath:indexPath];
+        cell.delegate = self;
+        [cell configureCellWithCheckItem:item];
+        return cell;
+    }
+    return nil;
 }
 
 
@@ -98,6 +117,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
+
+
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -123,23 +144,64 @@
     return YES;
 }
 
+
+#pragma mark - CheckTableViewCellDelegate
+- (void)didContantViewHeightCalculated:(CGFloat)height {
+    
+}
+
+
+- (void)didNoButtonClickedForCheck:(CheckItem*)check {
+    [self rejectCheck:check];
+}
+- (void)didConfirmButtonClickedForCheck:(CheckItem*)check {
+    [self rejectCheck:check];
+}
+
+
+
 #pragma mark - IBActions
 - (IBAction)sendMessage:(UIButton *)sender {
+    
     if(self.messageBox.text.length == 0)
         return;
     
     NSIndexPath* indexPath = [NSIndexPath indexPathForItem:self.dialogHistory.count inSection:0];
-    DialogItem* item = [DialogItem new];
-    item.message = self.messageBox.text;
-    item.type    = MessageTypeTo;
+//    DialogItem* item = [DialogItem new];
+//    item.message = self.messageBox.text;
+//    item.type    = MessageTypeCheck;// MessageTypeTo;
+
+    CheckItem* check = [CheckItem new];
+    check.type = MessageTypeCheck;
+    check.date = [NSDate date];
+    check.address = @"Мелележа 1";
+    check.phone = @"+375291411236";
+    check.totalPrice = 123454000;
+    
+    OrderItem* item1 = [[OrderItem alloc]init];
+    item1.image = [NSURL URLWithString:@"https://pp.vk.me/c622623/v622623249/41288/_-0-X5In4oU.jpg"];
+    item1.itemTitle = @"Pizza";
+    item1.count = 1;
+    item1.price = 1230000;
+    
+    OrderItem* item2 = [[OrderItem alloc]init];
+    item2.image = [NSURL URLWithString:@"https://pp.vk.me/c622623/v622623249/41288/_-0-X5In4oU.jpg"];
+    item2.itemTitle = @"Pizza Order";
+    item2.count = 2;
+    item2.price = 1830000;
+    
+    check.orderItems = [NSArray arrayWithObjects:item1, item2, nil];
+    
+    
     
     [self.tableView beginUpdates];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.dialogHistory addObject:item];
+    [self.dialogHistory addObject:check];
     [self.tableView endUpdates];
     
     if(indexPath.row == 0)
         [self.tableView scrollsToTop];
+    
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     self.messageBox.text = @"";
     self.textViewHeight.constant = self.defaultTextViewHeight;
@@ -186,17 +248,27 @@
 
 #pragma mark - Loaders
 - (void)loadMessageHitoryForDialogId:(NSInteger)dialogId {
-    NSIndexPath* indexPath = [NSIndexPath indexPathForItem:self.dialogHistory.count inSection:0];
-    DialogItem* item = [DialogItem new];
-    NSString* want = [self.segueParams objectForKey:@"want"];
-    User* user = [self.segueParams objectForKey:@"user"];
-    item.message = [NSString stringWithFormat:@"Привет, меня зовут %@. Я хочу заказать %@", user.name, want];
-    item.type    = MessageTypeTo;
-    
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.dialogHistory addObject:item];
-    [self.tableView endUpdates];
+//    NSIndexPath* indexPath = [NSIndexPath indexPathForItem:self.dialogHistory.count inSection:0];
+//    DialogItem* item = [DialogItem new];
+//    NSString* want = [self.segueParams objectForKey:@"want"];
+//    User* user = [self.segueParams objectForKey:@"user"];
+//    item.message = [NSString stringWithFormat:@"Привет, меня зовут %@. Я хочу заказать %@", user.name, want];
+//    item.type    = MessageTypeTo;
+//    item.date    = [NSDate date];
+//    
+//    [self.tableView beginUpdates];
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    [self.dialogHistory addObject:item];
+//    [self.tableView endUpdates];
 }
 
+
+#pragma mark - Confirms
+- (void)confirmCheck:(CheckItem*)check {
+    
+}
+
+- (void)rejectCheck:(CheckItem*)check {
+    
+}
 @end
